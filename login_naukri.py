@@ -3,8 +3,9 @@ import time
 import socket
 import json
 
-with open("/home/karthik/webautomates/user-info.json") as f:
+with open("/home/karthikgiri/git-webautomates/webautomates/user-info.json") as f:
   user_info = json.load(f)
+
 
 def is_connected():
     try:
@@ -24,7 +25,7 @@ for i in range(1,1000):
         for user in user_info:
 	        #print(user)
             # create a new Chrome session
-            driver = webdriver.Firefox()
+            driver = webdriver.Firefox(executable_path='/home/karthikgiri/git-webautomates/webautomates/geckodriver')
             driver.implicitly_wait(30)
             driver.maximize_window()
 
